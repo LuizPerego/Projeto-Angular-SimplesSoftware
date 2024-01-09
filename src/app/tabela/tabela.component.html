@@ -1,0 +1,18 @@
+<table class="table" class="col-md-12" >
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Sobrenome</th>
+      <th>Email</th>
+      <th>Senha</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of list">
+    <tr>
+      <td>{{ item.name | lowercase }}</td>
+      <td>{{ item.lastName | lowercase }}</td>
+      <td>{{ item.email | lowercase }}</td>
+      <td>{{ item.password | lowercase }}</td>
+    </tr>
+  </tbody>
+</table>

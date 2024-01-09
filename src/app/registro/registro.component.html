@@ -1,0 +1,42 @@
+
+<div id="entrada">
+  <form [formGroup]="cadastroForm" class="row g-3 needs-validation" novalidate>
+    <fieldset class="border p-2">
+      <legend class="w-auto fw--bolder">Cadastro</legend>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="validationCustom01" class="form-label"> Nome</label>
+          <input type="text" formControlName="name" class="form-control" id="name">
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom02" class="form-label">Sobrenome</label> 
+          <input type="text" formControlName="lastName" class="form-control" id="lastName">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-7">
+            <label for="validationCustom02" class="form-label">Email</label>
+            <input type="text" formControlName="email" class="form-control" id="email">
+        </div>
+        <div class="col-md-5">
+            <label for="validationCustom02" class="form-label">Senha</label>
+            <input type="password" formControlName="password" class="form-control" id="password">
+        </div>
+      </div>
+      <div>
+        <button [disabled]="!cadastroForm.valid" type="button"  class="btn btn-lg btn-dark" (click)="executarAcoesCadastro()" >Cadastro</button>
+        <app-modal-sucess *ngIf="viewModal" (fechar)="viewModal = false"></app-modal-sucess>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<div class="rotas">
+  <h2>Aqui usamos o metodo <strong>"@angular/router"</strong></h2>
+</div>
+<div class="rotas">
+  <button id="buttonTabela" class="btn btn-lg btn-primary" (click)="irParaRota('tabela')">Ver tabela</button>
+</div>
+<div>
+  <app-tabela></app-tabela>
+</div>
+
